@@ -40,6 +40,19 @@
   --card-border-rgb: 131, 134, 135;
 }
 
+.header {
+  height: 100vh;
+}
+.head{
+  text-align: center;
+  margin: 15vh;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.yuh{
+  margin-left: 5vw;
+}
+
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;

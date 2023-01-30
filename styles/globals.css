@@ -113,6 +113,10 @@ a {
   text-decoration: none;
 }
 
+.authContainer{  background: #78f5d3;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #44e096, #71f3cf);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #14d57b, #80fcda); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

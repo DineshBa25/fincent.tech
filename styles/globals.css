@@ -117,6 +117,30 @@ a {
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #44e096, #71f3cf);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #14d57b, #80fcda); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
+
+
+
+.leftDiv{
+  display: grid;
+  float : left;
+  flex-direction: column;
+  width: calc(100vw - 800px);
+  height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.rightDiv{
+  display: grid;
+  float: right;
+  flex-direction: column;
+  background: rgba(185, 185, 185, 0.22);
+  width: 440px;
+  height: calc(100vh - 200px);
+  border-radius: 30px;
+  align-content: center;
+  justify-content: center;
+  padding: 20px;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

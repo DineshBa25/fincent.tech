@@ -1,4 +1,4 @@
-import {Container, Header, Sidebar, Sidenav, Content, Navbar, Nav, Divider, Stack, Avatar} from 'rsuite';
+import {Container, Header, Sidebar, Sidenav, Content, Navbar, Nav, Divider, Stack, Avatar, Row, Col} from 'rsuite';
 import DashboardIcon from '@rsuite/icons/Dashboard';
 import GroupIcon from '@rsuite/icons/legacy/Group';
 import MagicIcon from '@rsuite/icons/legacy/Magic';
@@ -6,7 +6,7 @@ import React, {useContext, useEffect} from "react";
 import SignOut from "@rsuite/icons/legacy/SignOut";
 import {auth, UserContext} from "@/pages/firebase";
 import {useRouter} from "next/router";
-import {Card, Grid, Text, Link, Progress} from "@nextui-org/react";
+import {Card, Grid, Text, Link, Progress, Button, Input} from "@nextui-org/react";
 
 
 function handleSignOut(){
@@ -110,27 +110,43 @@ export default function dashboard() {
                 </Sidenav>
             </Sidebar>
 
-            <Container style={{padding: "20px"}}>
+            <Container style={{padding: "20px", overflowY: "auto"}}>
                 <Header>
-                    <h2>Welcome to your dashboard, Joe Aggie</h2>
+                    <h2 style={{ float: "left"}}>Welcome to your dashboard, <b style={{color:"#0aab38"}}>{"Dinesh"}</b></h2>
+                   <Stack  direction={"row"} spacing={20} style={{alignContent: "flex-end", justifyContent: "flex-end", float: "right"}}>
+                    <Input
+                        size="lg"
+                        placeholder="Search Anything"
+                    />
+                    <Button flat  size="lg" auto> Help </Button>
+                   </Stack>
                 </Header>
-                <Content>Your journey to financial literacy and impactful wealth building begins here.
-                    <Divider/>
+                Your journey to financial literacy and impactful wealth building begins here.
+                <Divider/>
+                <div style={{padding: "20px"}}>
+                    <Content>
+                        <div className={"leftDiv"}>
+                            <h1>Available Courses:</h1>
+                            <Stack style={{padding: "10px"}} direction={"row"} spacing={20} justifyContent={"flex-start"} wrap>
+                                <CourseCard name={"Budgeting"} description={"Understanding the basics of income and expenses, tracking your spending, and creating a budget that works for you."} image={"https://www.shutterstock.com/image-vector/financial-accounting-flat-lay-concept-600w-1851115834.jpg"}/>
+                                <CourseCard name={"Saving"} description={"The importance of saving, developing a savings plan, and tips for growing your savings."} image={"https://www.shutterstock.com/image-vector/family-couple-saving-money-man-600w-1675928638.jpg"}/>
+                                <CourseCard name={"Investing"} description={"Understanding different types of investments, diversifying your portfolio, and making informed investment decisions."} image={"https://www.shutterstock.com/image-vector/business-investment-profit-flat-vector-600w-1518184076.jpg"}/>
+                                <CourseCard name={"Credit"} description={"Building and maintaining good credit, understanding credit reports, and avoiding debt."} image={"https://www.shutterstock.com/image-vector/paid-by-credit-card-shopping-600w-1348754048.jpg"}/>
+                                <CourseCard name={"Retirement"} description={"Planning for retirement, understanding different retirement savings options, and preparing for retirement."} image={"https://www.shutterstock.com/image-vector/happy-senior-couple-relaxing-park-600w-1808690509.jpg"}/>
+                                <CourseCard name={"Taxation"} description={"Understanding tax laws and regulations, preparing for tax season, and maximizing tax benefits."} image={"https://www.shutterstock.com/image-vector/tax-law-authority-government-justice-600w-1936619749.jpg"}/>
+                                <CourseCard name={"Estate Planning"} description={"Planning for the future, understanding the importance of a will and other estate planning documents, and preparing for the distribution of your assets."} image={"https://www.shutterstock.com/image-vector/house-selection-search-project-real-600w-1902936610.jpg"}/>
+                            </Stack>
+                        </div>
 
-                    <h1>Available Courses:</h1>
-                    <Stack style={{padding: "10px"}} direction={"row"} spacing={20} justifyContent={"flex-start"} wrap>
-                        <CourseCard name={"Budgeting"} description={"Understanding the basics of income and expenses, tracking your spending, and creating a budget that works for you."}/>
-                        <CourseCard name={"Saving"} description={"The importance of saving, developing a savings plan, and tips for growing your savings."}/>
-                        <CourseCard name={"Investing"} description={"Understanding different types of investments, diversifying your portfolio, and making informed investment decisions."}/>
-                        <CourseCard name={"Credit"} description={"Building and maintaining good credit, understanding credit reports, and avoiding debt."}/>
-                        <CourseCard name={"Retirement"} description={"Planning for retirement, understanding different retirement savings options, and preparing for retirement."}/>
-                        <CourseCard name={"Taxation"} description={"Understanding tax laws and regulations, preparing for tax season, and maximizing tax benefits."}/>
-                        <CourseCard name={"Estate Planning"} description={"Planning for the future, understanding the importance of a will and other estate planning documents, and preparing for the distribution of your assets."}/>
-                    </Stack>
-
-                </Content>
-                <h2>The current user is: {auth.currentUser?.email}</h2>
-
+                    </Content>
+                    <div className={"rightDiv"}>
+                        <center>
+                            
+                            <h1>Overview</h1>
+                            <p>This is where you can see the leaderboard and all of the other information regarding how many courses you have completed and the acheivements that you have earned.</p>
+                        </center>
+                    </div>
+                </div>
             </Container>
         </Container>
 
@@ -138,10 +154,12 @@ export default function dashboard() {
 };
 
 //card component
-function CourseCard ( props: { name: string; description: string; } ) {
+function CourseCard ( props: { name: string;
+    description: string;
+    image: string; } ) {
 
     return(
-            <Card css={{ p: "$6", mw: "400px" }}>
+            <Card css={{ p: "$6", mw: "400px" }} style={{background: "rgba(197,197,197,0.13)", boxShadow: "50px"}}  >
                 <Card.Header>
                     <img
                         alt="nextui logo"
@@ -160,6 +178,14 @@ function CourseCard ( props: { name: string; description: string; } ) {
                         </Grid>
                     </Grid.Container>
                 </Card.Header>
+                <Card.Image
+                    src={props.image}
+                    objectFit="cover"
+                    width="100%"
+                    height={140}
+                    alt={"Investment Course Image"}
+                    style={{borderRadius: "20px"}}
+                />
                 <Card.Body css={{ py: "$2" }}>
                     <Text>
                         {props.description}

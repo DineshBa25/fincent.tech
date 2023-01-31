@@ -42,14 +42,29 @@
 
 .header {
   height: 100vh;
+  text-align: center;
+  background: #EEF4FE;  /* fallback for old browsers */  
 }
 .head{
   text-align: center;
   margin: 15vh;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Chakra Petch", sans-serif;
+  /* text-transform: uppercase; */
+  font-weight: 600pt;
+  font-size: 35pt;
+  letter-spacing: 3px;
+  /* color: #18293922; */
+  text-shadow: -1px 1px 0px #FF8F2D,
+                1px 1px 0 #FF8F2D,
+                1px -1px 0 #FF8F2D,
+                -1px -1px 0 #FF8F2D;
 }
 .yuh{
   margin-left: 5vw;
+}
+.progress {
+  max-width: 50%;
+  left: 25%;
 }
 
 

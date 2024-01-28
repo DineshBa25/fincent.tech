@@ -48,43 +48,7 @@
   margin: 15vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.yuh{
-  margin-left: 5vw;
-}
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
-}
 
 * {
   box-sizing: border-box;
@@ -113,10 +77,11 @@ a {
   text-decoration: none;
 }
 
-.authContainer{  background: #78f5d3;
+.authContainer{
+  background: #c01c1c;
   /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #44e096, #71f3cf);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #14d57b, #80fcda); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
+  background: -webkit-linear-gradient(to right, #e04444, #71f3cf);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #d51414, #80fcda); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
 
 
 
@@ -140,9 +105,4 @@ a {
   align-content: center;
   justify-content: center;
   padding: 20px;
-}
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

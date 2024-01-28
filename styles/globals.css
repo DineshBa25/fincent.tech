@@ -77,13 +77,14 @@ a {
   text-decoration: none;
 }
 
-.authContainer{
-  background: #c01c1c;
-  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #e04444, #71f3cf);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #d51414, #80fcda); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */}
-
-
+.authContainer {
+  width: 100vw;
+  height: 100vh; /* This will cover the full viewport */
+  background-image: url('/public/minimalist-room.png'), linear-gradient(to right, rgba(28, 192, 55, 0.4), rgba(199, 98, 98, 0.33));
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image in the container */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+}
 
 .leftDiv{
   display: grid;
